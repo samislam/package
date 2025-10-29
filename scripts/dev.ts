@@ -6,7 +6,12 @@ import { Barrelsby } from '@clscripts/barrelsby'
 import { Concurrently } from '@clscripts/concurrently'
 import { runCommandsSequentially } from '@clscripts/cl-common'
 
-const barrelCommand = new Barrelsby({ directory: './src', delete: true }).command
+const barrelCommand = new Barrelsby({
+  directory: './src',
+  delete: true,
+  name: 'exports.ts',
+  exclude: ['index.ts'],
+}).command
 
 runCommandsSequentially(
   [
@@ -16,7 +21,7 @@ runCommandsSequentially(
       execute: new Nodemon({
         clear: true,
         watchPaths: ['./src'],
-        ignorePaths: ['./src/index.ts'],
+        ignorePaths: ['./src/exports.ts'],
         ext: 'ts',
         exec: new Concurrently({
           raw: true,
@@ -29,7 +34,7 @@ runCommandsSequentially(
               preserveWatchOutput: true,
             }).command,
             new TsNode({
-              entryFile: './src/main.ts',
+              entryFile: './src/index.ts',
               projectPath: './tsconfig.json',
               transpileOnly: true,
             }).command,

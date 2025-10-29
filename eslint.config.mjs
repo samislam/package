@@ -1,13 +1,20 @@
 import eslint from '@eslint/js'
+import { getGlobals } from 'common-es'
 import tseslint from 'typescript-eslint'
+import { defineConfig } from 'eslint/config'
 
-export default tseslint.config(
-  {
-    ignores: ['dist/**'],
-  },
+const { __dirname } = getGlobals(import.meta.url)
+
+export default defineConfig([
+  { ignores: ['dist/**'] },
   eslint.configs.recommended,
   tseslint.configs.recommended,
   {
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: __dirname,
+      },
+    },
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
@@ -16,11 +23,11 @@ export default tseslint.config(
         {
           vars: 'all',
           args: 'after-used',
-          ignoreRestSiblings: true,
           varsIgnorePattern: '^_',
           argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
         },
       ],
     },
-  }
-)
+  },
+])

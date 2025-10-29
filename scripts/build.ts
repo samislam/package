@@ -12,6 +12,8 @@ runCommandsSequentially([
   new Barrelsby({
     directory: './src',
     delete: true,
+    name: 'exports.ts',
+    exclude: ['index.ts'],
   }).command,
 
   new EchoCli({

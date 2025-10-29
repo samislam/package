@@ -4,6 +4,6 @@ import { runCommandsSequentially } from '@clscripts/cl-common'
 runCommandsSequentially([
   new Prettier({
     files: ['**/*.{ts,tsx,md,js}'],
-    ignore: ['./src/index.ts'],
+    ignore: ['./src/exports.ts'],
   }).command,
 ])
