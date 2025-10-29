@@ -9,8 +9,6 @@ import { runCommandsSequentially } from '@clscripts/cl-common'
 const barrelCommand = new Barrelsby({
   directory: './src',
   delete: true,
-  name: 'exports.ts',
-  exclude: ['index.ts'],
 }).command
 
 runCommandsSequentially(
@@ -21,7 +19,7 @@ runCommandsSequentially(
       execute: new Nodemon({
         clear: true,
         watchPaths: ['./src'],
-        ignorePaths: ['./src/exports.ts'],
+        ignorePaths: ['./src/index.ts'],
         ext: 'ts',
         exec: new Concurrently({
           raw: true,
@@ -37,6 +35,7 @@ runCommandsSequentially(
               entryFile: './src/index.ts',
               projectPath: './tsconfig.json',
               transpileOnly: true,
+              register: ['tsconfig-paths/register'],
             }).command,
             barrelCommand,
           ],

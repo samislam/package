@@ -11,9 +11,6 @@ importers:
       common-es:
         specifier: ^1.1.0
         version: 1.1.0
-      tsconfig-paths:
-        specifier: ^4.2.0
-        version: 4.2.0
     devDependencies:
       '@clscripts/barrelsby':
         specifier: ^2.8.1
@@ -46,8 +43,8 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       '@clscripts/ts-node':
-        specifier: ^10.9.2
-        version: 10.9.2
+        specifier: ^10.9.3
+        version: 10.9.3
       '@clscripts/ts-node-dev':
         specifier: ^2.0.0
         version: 2.0.0
@@ -120,6 +117,9 @@ importers:
       ts-patch:
         specifier: ^3.3.0
         version: 3.3.0
+      tsconfig-paths:
+        specifier: ^4.2.0
+        version: 4.2.0
       tsx:
         specifier: ^4.20.3
         version: 4.20.6
@@ -333,8 +333,8 @@ packages:
   '@clscripts/ts-node-dev@2.0.0':
     resolution: {integrity: sha512-z4lnzp+bZIfCaB63vODP/SQWompSpjLtFk0yrlbZIdGNAg64RwxNlsdC6OXFjo1AvOFyn0LVmtGmjRzjzvhMpw==}
 
-  '@clscripts/ts-node@10.9.2':
-    resolution: {integrity: sha512-KqFOBkq8iXZaWn+cmrBtr02Orx23tYKF8N8b8N7f3k+xP6r35ms15thXY0pu4OMzIld+dWJq/5ZcVtPLhdkWZg==}
+  '@clscripts/ts-node@10.9.3':
+    resolution: {integrity: sha512-Cbm33cZWr00pSi5zaDRMFYs8e9hg7c0DM0sZClmAO+c5ZmJ4Yu5hf6A/8K1a72dAIS40Ev/YW5565OZ9XDRw4A==}
 
   '@clscripts/ts-patch@3.3.0':
     resolution: {integrity: sha512-LioYMrfj1YauRU3qyr5P6bASTICDWJf8Qcv9iSPr/nkFUqBrEWCHDya6NipVxtFzdUOHkf0h85RZAcKLkKyfNA==}
@@ -2863,7 +2863,7 @@ snapshots:
     dependencies:
       '@clscripts/cl-common': 1.0.4
 
-  '@clscripts/ts-node@10.9.2':
+  '@clscripts/ts-node@10.9.3':
     dependencies:
       '@clscripts/cl-common': 1.0.4
 
